@@ -1,0 +1,119 @@
+@API_Psychologist_HostAddress = http://localhost:5180
+
+GET {{API_Psychologist_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+
+// ================= ПОЛЬЗОВАТЕЛИ =======================
+
+GET {{API_Psychologist_HostAddress}}/users/
+Accept: application/json
+
+###
+
+GET {{API_Psychologist_HostAddress}}/users/21
+Accept: application/json
+###
+
+GET {{API_Psychologist_HostAddress}}/users/by-login?login=Madam
+Accept: application/json
+###
+
+POST {{API_Psychologist_HostAddress}}/users/
+Content-Type: application/json
+{
+    "Login" : "Test",
+    "Gender" : "Ж",
+    "Password" : "1"
+}
+###
+
+PUT {{API_Psychologist_HostAddress}}/users/26
+Content-Type: application/json
+{
+    "Login" : "Изменено",
+    "Gender" : "М",
+    "Password" : "1"
+}
+###
+
+DELETE {{API_Psychologist_HostAddress}}/users/26
+Accept: application/json
+
+###
+
+
+
+
+// ================= УСЛУГИ ============================
+
+GET {{API_Psychologist_HostAddress}}/themes/
+Accept: application/json
+
+###
+
+GET {{API_Psychologist_HostAddress}}/themes/1
+Accept: application/json
+###
+
+
+POST {{API_Psychologist_HostAddress}}/themes/
+Content-Type: application/json
+{
+    "PathImage" : "img/service.jpg",
+    "ThemeName" : "test test test",
+    "Text" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+}
+###
+
+PUT {{API_Psychologist_HostAddress}}/themes/15
+Content-Type: application/json
+{
+    "PathImage" : "Изменено",
+    "ThemeName" : "test____",
+    "Text" : "Внесены изменения"
+}
+###
+
+DELETE {{API_Psychologist_HostAddress}}/themes/15
+Accept: application/json
+
+###
+
+
+
+
+// ================= ОТЗЫВЫ ============================
+
+GET {{API_Psychologist_HostAddress}}/reviews/
+Accept: application/json
+
+###
+
+GET {{API_Psychologist_HostAddress}}/reviews/27
+Accept: application/json
+###
+
+
+POST {{API_Psychologist_HostAddress}}/reviews/
+Content-Type: application/json
+{
+    "DateTimeReview": "2025-02-22T11:37:56.711226",
+    "Text" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+    "UsersId" : 21
+}
+###
+
+PUT {{API_Psychologist_HostAddress}}/reviews/37
+Content-Type: application/json
+{
+    "Text" : "Исправлены ошибки в тексте_37"
+}
+###
+
+DELETE {{API_Psychologist_HostAddress}}/reviews/37
+Accept: application/json
+
+###
+
