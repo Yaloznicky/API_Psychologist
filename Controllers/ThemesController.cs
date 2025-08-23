@@ -17,7 +17,7 @@ namespace API_Psychologist.Controllers
             return Ok(themes);
         }
 
-        // GET api/<ThemesController>/5
+        // GET: api/<ThemesController>/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Theme>> GetTheme(int id)
         {
@@ -32,7 +32,7 @@ namespace API_Psychologist.Controllers
             }
         }
 
-        // POST api/<ThemesController>
+        // POST: api/<ThemesController>
         [HttpPost]
         public IActionResult Post(Theme theme)
         {
@@ -42,7 +42,7 @@ namespace API_Psychologist.Controllers
         
         }
 
-        // PUT api/<ThemesController>/5
+        // PUT: api/<ThemesController>/5
         [HttpPut("{id}")]
         public IActionResult Put(int id, Theme theme)
         {
@@ -56,7 +56,7 @@ namespace API_Psychologist.Controllers
             return Ok("изменено");
         }
 
-        // DELETE api/<ThemesController>/5
+        // DELETE: api/<ThemesController>/5
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {

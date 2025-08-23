@@ -2,8 +2,6 @@
 using DesktopPsychologist_WF.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Newtonsoft.Json;
-
 
 namespace API_Psychologist.Controllers
 {
@@ -19,7 +17,7 @@ namespace API_Psychologist.Controllers
             return Ok(users);
         }
 
-        // GET api/<UsersController>/5
+        // GET: api/<UsersController>/5
         [HttpGet("{id}")]
         public async Task<ActionResult<User>> GetUser(int id)
         {
@@ -34,7 +32,7 @@ namespace API_Psychologist.Controllers
             }
         }
 
-        // GET api/<UsersController>/by-login?login=userLogin
+        // GET: api/<UsersController>/by-login?login=userLogin
         [HttpGet("by-login")]
         public async Task<ActionResult<User>> GetUserByLogin([FromQuery] string login)
         {
@@ -49,9 +47,8 @@ namespace API_Psychologist.Controllers
             }
         }
 
-        // POST api/<UsersController>
+        // POST: api/<UsersController>
         [HttpPost]
-        //public void Post([FromBody] User user)
         public IActionResult Post(User user)
         {
             context.Users.Add(user);
@@ -59,7 +56,7 @@ namespace API_Psychologist.Controllers
             return Ok("добавлено");
         }
 
-        // PUT api/<UsersController>/5
+        // PUT: api/<UsersController>/5
         [HttpPut("{id}")]
         public IActionResult Put(int id, User user)
         {
@@ -74,7 +71,7 @@ namespace API_Psychologist.Controllers
             return Ok("изменено");
         }
 
-        // DELETE api/<UsersController>/5
+        // DELETE: api/<UsersController>/5
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {

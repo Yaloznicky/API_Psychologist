@@ -1,9 +1,5 @@
 @API_Psychologist_HostAddress = http://localhost:5180
 
-GET {{API_Psychologist_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
 
 // ================= онкэгнбюрекх =======================
 

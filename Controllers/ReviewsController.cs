@@ -1,6 +1,5 @@
 ﻿using API_Psychologist.Models;
 using DesktopPsychologist_WF.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -18,7 +17,7 @@ namespace API_Psychologist.Controllers
             return Ok(reviews);
         }
 
-        // GET api/<ReviewsController>/5
+        // GET: api/<ReviewsController>/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Review>> GetReview(int id)
         {
@@ -35,7 +34,7 @@ namespace API_Psychologist.Controllers
             }
         }
 
-        // POST api/<ReviewsController>
+        // POST: api/<ReviewsController>
         [HttpPost]
         public IActionResult Post([FromBody] Review review)
         {
@@ -45,7 +44,7 @@ namespace API_Psychologist.Controllers
 
         }
 
-        // PUT api/<ReviewsController>/5
+        // PUT: api/<ReviewsController>/5
         [HttpPut("{id}")]
         public IActionResult Put(int id, Review review)
         {
@@ -58,7 +57,7 @@ namespace API_Psychologist.Controllers
             return Ok("изменено");
         }
 
-        // DELETE api/<ReviewsController>/5
+        // DELETE: api/<ReviewsController>/5
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {

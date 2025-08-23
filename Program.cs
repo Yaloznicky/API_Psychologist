@@ -3,12 +3,6 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Указываем, что необходимо прослушивать любые адреса по заданному порту
-//builder.WebHost.ConfigureKestrel(options =>
-//{
-//    options.ListenAnyIP(5000);
-//});
-
 
 // Получаем строку подключения из файла конфигурации
 string? connection = builder.Configuration.GetConnectionString("Default");
@@ -27,7 +21,6 @@ builder.Services.AddDbContext<ApplicationContext>(
 
 
 // Add services to the container.
-
 builder.Services.AddControllers();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -46,8 +39,6 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
-
-//app.MapControllers();
 
 // устанавливаем сопоставление маршрутов с контроллерами
 app.MapControllerRoute(
